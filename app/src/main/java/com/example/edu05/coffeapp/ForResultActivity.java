@@ -36,12 +36,17 @@ public class ForResultActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d(TAG,"onActivityResult:"+requestCode);
-        Log.d(TAG,"onActivityResult:"+resultCode);
-        Log.d(TAG,"onActivityResult:"+data);
 
-        String result = data.getStringExtra("result");
-        int value = data.getIntExtra("int",-1);
-        Toast.makeText(this, result+",int: "+value, Toast.LENGTH_SHORT).show();
+        if(requestCode == REQUEST_CODE && resultCode == RESULT_OK && data !=null) {
+            Log.d(TAG, "onActivityResult:" + requestCode);
+            Log.d(TAG, "onActivityResult:" + resultCode);
+            Log.d(TAG, "onActivityResult:" + data);
+
+            String result = data.getStringExtra("result");
+            int value = data.getIntExtra("int", -1);
+            Toast.makeText(this, result + ",int: " + value, Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "데이터가 없습니다.", Toast.LENGTH_SHORT).show();
+        }
     }
 }

@@ -6,7 +6,11 @@
         android:title="item"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_setting2"
+        android:id="@+id/action_menu2"
+        android:title="item"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_menu3"
         android:title="item"
         app:showAsAction="ifRoom" />
 </menu>
