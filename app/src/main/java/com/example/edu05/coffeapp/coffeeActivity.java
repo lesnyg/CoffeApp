@@ -2,6 +2,9 @@ package com.example.edu05.coffeapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -63,10 +66,31 @@ public class coffeeActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_coffee,menu);
+        return true;
+    }
+
     private void displayResult() {
         mQuantityTextView.setText(""+mQuantity);
         String result = "가격 : "+(COFFEE_PRICE*mQuantity)+"원\n감사합니다.";
         mResultTextView.setText(result);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_setting:
+                Toast.makeText(this, "첫번째 메뉴", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_setting2:
+                Toast.makeText(this, "두번째 메뉴", Toast.LENGTH_SHORT).show();
+
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void init() {  mQuantity = 0;   }
