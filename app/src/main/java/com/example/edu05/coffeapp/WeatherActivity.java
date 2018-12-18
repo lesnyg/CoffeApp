@@ -1,7 +1,10 @@
 package com.example.edu05.coffeapp;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -10,9 +13,11 @@ import java.util.List;
 import adapters.WeatherAdapter;
 import models.Weather;
 
-public class WeatherActivity extends AppCompatActivity {
+public class WeatherActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView mListView;
+    private WeatherAdapter madapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +48,17 @@ public class WeatherActivity extends AppCompatActivity {
         weatherList.add(new Weather(R.drawable.ic_rain,"수원","27도"));
         weatherList.add(new Weather(R.drawable.ic_sun,"수원","27도"));
 
-        WeatherAdapter adapter = new WeatherAdapter(this,weatherList);
-        mListView.setAdapter(adapter);
+        madapter = new WeatherAdapter(this,weatherList);
+        mListView.setAdapter(madapter);
+
+        mListView.setOnItemClickListener(this);
     }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        madapter.setSelect(position);
+        //데이터가 변경됨을 알려줌 = 다시그려라
+        madapter.notifyDataSetChanged();
+    }
 }
