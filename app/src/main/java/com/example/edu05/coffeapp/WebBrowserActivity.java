@@ -1,13 +1,16 @@
 package com.example.edu05.coffeapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +18,7 @@ import android.widget.Toast;
 public class WebBrowserActivity extends AppCompatActivity {
     private EditText mUrlEditText;
     private WebView mWebView;
+    private Button mSearchButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +40,14 @@ public class WebBrowserActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.search_btn).setOnClickListener(new View.OnClickListener() {
+        mSearchButton=findViewById(R.id.search_btn);
+        mSearchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mWebView.loadUrl(mUrlEditText.getText().toString());
+                //키보드 내리기
+                InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mUrlEditText.getWindowToken(), 0);
             }
         });
         //키보드 이벤트 검출
@@ -47,7 +55,10 @@ public class WebBrowserActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if(actionId == EditorInfo.IME_ACTION_SEARCH){
-                    mWebView.loadUrl(mUrlEditText.getText().toString());
+                    mSearchButton.callOnClick();
+
+
+
                 }
                 return true;
 
