@@ -3,6 +3,7 @@ package com.example.edu05.coffeapp;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +31,7 @@ public class coffeeActivity extends AppCompatActivity implements View.OnClickLis
     private EditText mCommentEditText;
     private int mQuantity;
     private boolean mIsCream;
+    private Chronometer mChronometer;
 
 
     @Override
@@ -36,6 +39,8 @@ public class coffeeActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         init();
         setContentView(R.layout.activity_coffee);
+        mChronometer = new Chronometer(this);
+
 
         mMinusButton = findViewById(R.id.minus_button);
         mMinusButton.setOnClickListener(this);
@@ -47,6 +52,13 @@ public class coffeeActivity extends AppCompatActivity implements View.OnClickLis
         mResultTextView = findViewById(R.id.result_text);
         mCreamCheckBox = findViewById(R.id.cream_check);
         mCommentEditText = findViewById(R.id.comment_edit);
+        mChronometer = findViewById(R.id.chronometer);
+        mChronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                
+            }
+        });
 
 
 
@@ -83,10 +95,16 @@ public class coffeeActivity extends AppCompatActivity implements View.OnClickLis
                 sound();
                 return true;
             case R.id.action_menu3:
+                startChronometer();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void startChronometer() {
+        mChronometer.setBase(SystemClock.elapsedRealtime());
+        mChronometer.start();
     }
 
 

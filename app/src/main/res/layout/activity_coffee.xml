@@ -14,6 +14,11 @@
         android:textAppearance="@android:style/TextAppearance.Medium"
         android:text="Quantity"
         android:textAllCaps="true" />
+    <android.support.v7.widget.AppCompatCheckBox
+        android:id="@+id/cream_check"
+        android:text="cream"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -47,11 +52,7 @@
         android:layout_height="wrap_content"
         android:text="결과"
         android:textAllCaps="true" />
-    <android.support.v7.widget.AppCompatCheckBox
-        android:id="@+id/cream_check"
-        android:text="cream"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/comment_edit"
         android:layout_width="wrap_content"
@@ -60,6 +61,11 @@
     <Button
         android:id="@+id/order_button"
         android:text="order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:textSize="50sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
