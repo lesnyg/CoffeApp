@@ -9,10 +9,12 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -121,9 +123,36 @@ public class MemoActivity extends AppCompatActivity implements AdapterView.OnIte
                 builder.show();
 
                 return true;
+            case R.id.action_custom_dialog:
+                showCustomDialog();
+                return true;
             default:
                 return super.onContextItemSelected(item);
         }
+    }
+
+    private void showCustomDialog() {
+        View view = LayoutInflater.from(this).inflate(R.layout.dialog_login,null,false);
+        final EditText idEditText = findViewById(R.id.id_edit);
+        final EditText passWordEditText = findViewById(R.id.password_edit);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("확인");
+        builder.setMessage("정말로 삭제하시겠습니까?");
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String id = idEditText.getText().toString();
+                String pass = passWordEditText.getText().toString();
+
+                Toast.makeText(MemoActivity.this, "ID : "+id+" , password : "+pass, Toast.LENGTH_SHORT).show();
+            }
+        });
+        builder.setNegativeButton("취소",null);
+        builder.setView(view);
+        builder.show();
+
     }
 
     private void deleteMemo(long id) {
