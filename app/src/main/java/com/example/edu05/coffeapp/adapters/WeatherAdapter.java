@@ -1,4 +1,4 @@
-package adapters;
+package com.example.edu05.coffeapp.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -11,11 +11,9 @@ import android.widget.TextView;
 
 import com.example.edu05.coffeapp.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-import models.Weather;
+import com.example.edu05.coffeapp.models.Weather;
 
 public class WeatherAdapter extends BaseAdapter {
     private Context mContext;

@@ -1,4 +1,4 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.edu05.coffeapp.R;
 
 public class ForResultActivity extends AppCompatActivity implements View.OnClickListener {
 

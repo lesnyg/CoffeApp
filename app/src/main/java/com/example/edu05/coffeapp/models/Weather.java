@@ -1,4 +1,4 @@
-package models;
+package com.example.edu05.coffeapp.models;
 
 public class Weather {
     private int imageres;

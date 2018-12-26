@@ -1,4 +1,4 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.edu05.coffeapp.R;
 import com.example.edu05.coffeapp.managers.Bank;
 
 public class BankActivity extends AppCompatActivity {

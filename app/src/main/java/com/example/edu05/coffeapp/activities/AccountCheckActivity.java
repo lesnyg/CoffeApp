@@ -1,4 +1,4 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,9 +6,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.edu05.coffeapp.R;
 import com.example.edu05.coffeapp.managers.Bank;
 
-import models.Account;
+import com.example.edu05.coffeapp.models.Account;
 
 public class AccountCheckActivity extends AppCompatActivity implements View.OnClickListener {
 

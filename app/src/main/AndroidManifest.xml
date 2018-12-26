@@ -11,34 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".coffeeActivity">
-        </activity>
-        <activity android:name=".OrderCheckActivity" />
-        <activity android:name=".ForResultActivity">
-        </activity>
-        <activity android:name=".TargetActivity" />
-        <activity android:name=".WebBrowserActivity">
-        </activity>
-        <activity android:name=".WeatherActivity">
-        </activity>
-        <activity android:name=".Memo2Activity" />
+        <activity android:name=".activities.coffeeActivity"></activity>
+        <activity android:name=".activities.OrderCheckActivity" />
+        <activity android:name=".activities.ForResultActivity"></activity>
+        <activity android:name=".activities.TargetActivity" />
+        <activity android:name=".activities.WebBrowserActivity"></activity>
+        <activity android:name=".activities.WeatherActivity"></activity>
+        <activity android:name=".activities.Memo2Activity" />
         <activity
-            android:name=".MemoActivity"
+            android:name=".activities.MemoActivity"
             android:label="@string/title_activity_memo"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".BankActivity">
-        </activity>
-        <activity android:name=".OpenAccountActivity" />
-        <activity android:name=".AccountCheckActivity" />
-        <activity android:name=".AdminModeActivity" />
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activities.BankActivity"></activity>
+        <activity android:name=".activities.OpenAccountActivity" />
+        <activity android:name=".activities.AccountCheckActivity" />
+        <activity android:name=".activities.AdminModeActivity" />
         <activity android:name=".ListviewActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".activities.LifeCycleActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

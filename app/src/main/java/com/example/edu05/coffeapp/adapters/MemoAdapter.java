@@ -1,4 +1,4 @@
-package adapters;
+package com.example.edu05.coffeapp.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +10,7 @@ import com.example.edu05.coffeapp.R;
 
 import java.util.List;
 
-import models.Memo;
+import com.example.edu05.coffeapp.models.Memo;
 
 public class MemoAdapter extends BaseAdapter {
     private final List<Memo> mData;

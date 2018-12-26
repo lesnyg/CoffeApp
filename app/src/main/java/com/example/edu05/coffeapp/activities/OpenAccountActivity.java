@@ -1,4 +1,4 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,9 +6,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.edu05.coffeapp.R;
 import com.example.edu05.coffeapp.managers.Bank;
 
-import models.Account;
+import com.example.edu05.coffeapp.models.Account;
 
 public class OpenAccountActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,7 +35,7 @@ public class OpenAccountActivity extends AppCompatActivity implements View.OnCli
 
         Toast.makeText(this, "개설되었습니다.", Toast.LENGTH_SHORT).show();
 
-        finish();
+         finish();
     }
 
     @Override

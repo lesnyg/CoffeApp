@@ -1,4 +1,4 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +9,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.edu05.coffeapp.R;
 import com.example.edu05.coffeapp.managers.Bank;
 
 import java.util.List;
 
-import models.Account;
-import models.Memo;
+import com.example.edu05.coffeapp.models.Account;
 
 public class AdminModeActivity extends AppCompatActivity {
 

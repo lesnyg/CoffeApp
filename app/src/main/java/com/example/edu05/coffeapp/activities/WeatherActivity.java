@@ -1,6 +1,5 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +11,9 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapters.WeatherAdapter;
-import models.Weather;
+import com.example.edu05.coffeapp.R;
+import com.example.edu05.coffeapp.adapters.WeatherAdapter;
+import com.example.edu05.coffeapp.models.Weather;
 
 public class WeatherActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 

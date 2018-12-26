@@ -12,6 +12,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.edu05.coffeapp.activities.BankActivity;
+import com.example.edu05.coffeapp.activities.LifeCycleActivity;
+import com.example.edu05.coffeapp.activities.MemoActivity;
+import com.example.edu05.coffeapp.activities.WeatherActivity;
+import com.example.edu05.coffeapp.activities.coffeeActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,6 +39,9 @@ public class ListviewActivity extends AppCompatActivity {
         addItem("날씨앱","모델클래스를 활용하여 BaseAdapter 연습",WeatherActivity.class);
         addItem("메모장","연습문제",MemoActivity.class);
         addItem("은행예제","연습문제",BankActivity.class);
+        addItem("LifeCycle","생명주기",LifeCycleActivity.class);
+
+
         MyAdapter adapter = new MyAdapter(mDataList);
 
         mListView.setAdapter(adapter);

@@ -1,4 +1,4 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -21,8 +21,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapters.MemoAdapter;
-import models.Memo;
+import com.example.edu05.coffeapp.R;
+import com.example.edu05.coffeapp.adapters.MemoAdapter;
+import com.example.edu05.coffeapp.models.Memo;
 
 public class MemoActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 

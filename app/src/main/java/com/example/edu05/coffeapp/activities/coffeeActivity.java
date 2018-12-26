@@ -1,4 +1,4 @@
-package com.example.edu05.coffeapp;
+package com.example.edu05.coffeapp.activities;
 
 import android.content.Intent;
 import android.media.MediaPlayer;
@@ -15,6 +15,8 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.edu05.coffeapp.R;
 
 public class coffeeActivity extends AppCompatActivity implements View.OnClickListener {
     public static final int QUANTITY_MIN = 0;
