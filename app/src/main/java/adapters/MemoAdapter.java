@@ -1,11 +1,9 @@
 package adapters;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.edu05.coffeapp.R;
@@ -13,7 +11,6 @@ import com.example.edu05.coffeapp.R;
 import java.util.List;
 
 import models.Memo;
-import models.Weather;
 
 public class MemoAdapter extends BaseAdapter {
     private final List<Memo> mData;
@@ -51,7 +48,7 @@ public class MemoAdapter extends BaseAdapter {
             TextView titleTextView = convertView.findViewById(R.id.title_text);
             TextView contentTextView = convertView.findViewById(R.id.content_text);
 
-            viewHolder.titleTextView = titleTextView;
+            viewHolder.idTextView = titleTextView;
             viewHolder.contentTextView = contentTextView;
 
             convertView.setTag(viewHolder);
@@ -63,7 +60,7 @@ public class MemoAdapter extends BaseAdapter {
         Memo memo = mData.get(position);
 
         //화면에 뿌리기기
-        viewHolder.titleTextView.setText(memo.getTitle());
+        viewHolder.idTextView.setText(memo.getTitle());
         viewHolder.contentTextView.setText(memo.getContent());
 
         return convertView;
@@ -71,7 +68,7 @@ public class MemoAdapter extends BaseAdapter {
 
     //findViewById로 가져온 View들을 보관
     private static class ViewHolder{
-        TextView titleTextView;
+        TextView idTextView;
         TextView contentTextView;
     }
 

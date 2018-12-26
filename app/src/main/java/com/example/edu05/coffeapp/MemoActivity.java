@@ -81,9 +81,9 @@ public class MemoActivity extends AppCompatActivity implements AdapterView.OnIte
                 //새메모
                 mMemoList.add(new Memo(title, content));
             } else if (requestCode == REQUEST_CODE_UPDATE_MEMO) {
-                Memo memo = mMemoList.get((int)id);
-                memo.setTitle(title);
-                memo.setContent(content);
+//                Memo memo = mMemoList.get((int)id);
+//                memo.setTitle(title);
+//                memo.setContent(content);
             }
 
             mAdapter.notifyDataSetChanged();
@@ -166,7 +166,7 @@ public class MemoActivity extends AppCompatActivity implements AdapterView.OnIte
 
         Intent intent = new Intent(this,Memo2Activity.class);
         intent.putExtra("id",id);
-        intent.putExtra("memo",memo);
+        //intent.putExtra("memo",memo);
 
         startActivityForResult(intent,REQUEST_CODE_UPDATE_MEMO);
     }
