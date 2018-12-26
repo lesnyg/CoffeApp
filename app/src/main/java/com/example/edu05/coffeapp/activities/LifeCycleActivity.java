@@ -1,5 +1,9 @@
 package com.example.edu05.coffeapp.activities;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,12 +26,19 @@ public class LifeCycleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_life_cycle);
 
         mScoreTextView = findViewById(R.id.score_text);
-        setScore(mScore);
 
         Log.d(TAG,"onCreate: ");
 
         //복원 여기도 되고
-
+//        if(savedInstanceState != null){
+//            mScore = savedInstanceState.getInt("score");
+//            setScore(mScore);
+//        }
+ 
+        //소량 영구 저장소
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mScore = sharedPreferences.getInt("score",0);
+        setScore(mScore);
     }
 
     //복원 여기도 됨
@@ -61,6 +72,12 @@ public class LifeCycleActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(TAG,"onPause: ");
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("score",mScore);
+        editor.apply();     //비동기 (async)
+     //   editor.commit();     동기 (sync)
     }
     @Override
     protected void onStop() {
