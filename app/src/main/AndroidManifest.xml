@@ -11,18 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.coffeeActivity"></activity>
+        <activity android:name=".activities.coffeeActivity" />
         <activity android:name=".activities.OrderCheckActivity" />
-        <activity android:name=".activities.ForResultActivity"></activity>
+        <activity android:name=".activities.ForResultActivity" />
         <activity android:name=".activities.TargetActivity" />
-        <activity android:name=".activities.WebBrowserActivity"></activity>
-        <activity android:name=".activities.WeatherActivity"></activity>
+        <activity android:name=".activities.WebBrowserActivity" />
+        <activity android:name=".activities.WeatherActivity" />
         <activity android:name=".activities.Memo2Activity" />
         <activity
             android:name=".activities.MemoActivity"
             android:label="@string/title_activity_memo"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".activities.BankActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activities.BankActivity" />
         <activity android:name=".activities.OpenAccountActivity" />
         <activity android:name=".activities.AccountCheckActivity" />
         <activity android:name=".activities.AdminModeActivity" />
@@ -33,8 +33,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.LifeCycleActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity android:name=".activities.LifeCycleActivity" />
+        <activity android:name=".activities.BasketballActivity"></activity>
     </application>
 
 </manifest>

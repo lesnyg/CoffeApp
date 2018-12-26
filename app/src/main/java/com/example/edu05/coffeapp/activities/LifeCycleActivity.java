@@ -35,8 +35,8 @@ public class LifeCycleActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        //복원원
-        if(savdInstanceState != null){
+        //복원
+        if(savedInstanceState != null){
             mScore = savedInstanceState.getInt("score");
             setScore(mScore);
         }

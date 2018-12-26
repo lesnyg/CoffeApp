@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edu05.coffeapp.activities.BankActivity;
+import com.example.edu05.coffeapp.activities.BasketballActivity;
 import com.example.edu05.coffeapp.activities.LifeCycleActivity;
 import com.example.edu05.coffeapp.activities.MemoActivity;
 import com.example.edu05.coffeapp.activities.WeatherActivity;
@@ -35,6 +36,7 @@ public class ListviewActivity extends AppCompatActivity {
         mListView = findViewById(R.id.list_view);
 
         mDataList = new ArrayList<>();
+        addItem("농구앱","버튼",BasketballActivity.class);
         addItem("커피앱","CheckBox",coffeeActivity.class);
         addItem("날씨앱","모델클래스를 활용하여 BaseAdapter 연습",WeatherActivity.class);
         addItem("메모장","연습문제",MemoActivity.class);
